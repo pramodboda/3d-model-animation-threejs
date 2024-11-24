@@ -20,7 +20,7 @@ section {
 }
 
 #hero {
-  background: #000;
+  background: #333;
   color: #fff;
   text-align: center;
 }
@@ -29,4 +29,13 @@ footer {
   background: #000;
   color: #fff;
   text-align: center;
+}
+
+#container3D {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  right: 0;
+
+  border: 1px solid red;
 }
