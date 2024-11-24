@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* width: 100%;
+  height: 100%; */
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+#hero {
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
