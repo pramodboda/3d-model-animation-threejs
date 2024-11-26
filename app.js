@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-// import { gsap } from "gsap";
 
 /*
     PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
@@ -31,12 +30,23 @@ gltfLoader.load(
   function (gltf) {
     appleWatch = gltf.scene;
     // initial positions
-    // appleWatch.position.x = 0;
-    // appleWatch.position.y = 0.01;
-    // appleWatch.position.z = 0;
+    appleWatch.position.x = 0;
+    appleWatch.position.y = -0.02;
+    appleWatch.position.z = 0;
 
-    // appleWatch.rotation.x = 0.3;
-    // appleWatch.rotation.y = -0.05;
+    appleWatch.rotation.x = 0;
+    appleWatch.rotation.y = 0;
+    appleWatch.rotation.z = 0;
+
+    // comment above position code line and use this code for testing your current position
+    // appleWatch.position.x = 0;
+    // appleWatch.position.y = -0.03;
+    // appleWatch.position.z = 5;
+
+    // appleWatch.rotation.x = 0;
+    // appleWatch.rotation.y = 4;
+    // appleWatch.rotation.z = 0;
+    // =======================================
 
     scene.add(appleWatch);
 
@@ -67,36 +77,43 @@ const reRender3D = () => {
   requestAnimationFrame(reRender3D);
   renderer.render(scene, camera);
   // model self animation  speed
-  //   mixer.update(0.02);
+  // mixer.update(0.02);
 };
 reRender3D();
 
 let arrPositionModel = [
   {
     id: "hero",
-    position: { x: 0, y: 0.01, z: 0 },
-    rotation: { x: 0, y: -0.15, z: 0 },
-  },
-  {
-    id: "feature1",
-    position: { x: 0, y: 0.01, z: 0 },
-    rotation: { x: 1, y: 6.3, z: 0 },
-  },
-  {
-    id: "feature2",
-    position: { x: 1, y: 0.01, z: -0.05 },
+    position: { x: 0, y: -0.02, z: 0 },
     rotation: { x: 0, y: 0, z: 0 },
   },
   {
-    id: "feature3",
-    position: { x: 0, y: 0, z: 0.5 },
-    rotation: { x: 0, y: 0.5, z: 0 },
+    id: "feature1",
+    position: { x: 0, y: -0.02, z: 0 },
+    rotation: { x: 0, y: 5.8, z: 0 },
   },
   {
-    id: "feature4",
-    position: { x: 1, y: -1, z: 0 },
-    rotation: { x: 0.3, y: -0.5, z: 0 },
+    id: "feature2",
+    position: { x: 0.01, y: -0.02, z: 4.5 },
+    rotation: { x: 0.5, y: -0.5, z: 0 },
   },
+  {
+    id: "feature3",
+    position: { x: 0.002, y: -0.05, z: 5 },
+    rotation: { x: -1.6, y: -0.61, z: -1.6 },
+  },
+
+  {
+    id: "feature4",
+    position: { x: 0.005, y: -0.03, z: 5 },
+    rotation: { x: 0, y: 4, z: 0 },
+  },
+
+  // {
+  //   id: "feature5",
+  //   position: { x: 0, y: -0.1, z: 5 },
+  //   rotation: { x: 0, y: 0, z: 0 },
+  // },
 ];
 
 const modelMode = () => {
@@ -104,7 +121,7 @@ const modelMode = () => {
   let currentSection;
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    if (rect.top <= window.innerHeight / 3) {
+    if (rect.top <= window.innerHeight / 2) {
       currentSection = section.id;
     }
   });
@@ -117,14 +134,14 @@ const modelMode = () => {
     gsap.to(appleWatch.position, {
       x: new_coordinates.position.x,
       y: new_coordinates.position.y,
-      x: new_coordinates.position.z,
+      z: new_coordinates.position.z,
       duration: 3,
       ease: "power1.out",
     });
     gsap.to(appleWatch.rotation, {
       x: new_coordinates.rotation.x,
       y: new_coordinates.rotation.y,
-      x: new_coordinates.rotation.z,
+      z: new_coordinates.rotation.z,
       duration: 3,
       ease: "power1.out",
     });
