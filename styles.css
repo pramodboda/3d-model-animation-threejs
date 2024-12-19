@@ -41,14 +41,38 @@ body {
   padding: 50px 20% 15px 20%;
 }
 
-.section .text-content h1,
-.section .text-content h2 {
+.section .text-content {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.section .text-content .feature-list {
+  list-style: none;
+}
+.white-text {
   color: #fff;
-  margin-bottom: 20px;
+}
+.orange-text {
+  color: #f56900;
+}
+.section .text-content .feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 3rem;
+}
+.section .text-content .feature-list li {
+  margin-bottom: 2.5rem;
 }
 
+.section .text-content h1,
 .section .text-content h2 {
-  color: #fff;
+  margin-bottom: 20px;
+  font-size: 4rem;
+}
+
+.section .text-content .typography-callout-stat {
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 #hero {
