@@ -218,8 +218,11 @@ gltfLoader.load(
   "./assets/3d-models/apple_watch_ultra_-_orange.glb",
   function (gltf) {
     appleWatch = gltf.scene;
-    appleWatch.position.set(0, -0.02, 0);
-    appleWatch.rotation.set(0, 0, 0);
+    // appleWatch.position.set(0, -0.02, 0);
+    // appleWatch.rotation.set(0, 0, 0);
+
+    // appleWatch.position.set(0.025, -0.025, 5);
+    // appleWatch.rotation.set(0, 4, 0);
 
     scene.add(appleWatch);
 
@@ -273,7 +276,7 @@ let arrPositionModel = [
   },
   {
     id: "feature4",
-    position: { x: 0.005, y: -0.03, z: 5 },
+    position: { x: 0.025, y: -0.025, z: 5 },
     rotation: { x: 0, y: 4, z: 0 },
   },
 ];
